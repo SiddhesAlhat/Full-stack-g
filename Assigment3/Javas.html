@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Number Programs</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 8px;
+            width: 200px;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JavaScript Number Programs</h2>
+
+    <input type="number" id="number" placeholder="Enter a number">
+
+    <br><br>
+
+    <button onclick="checkOddEven()">Check Odd/Even</button>
+    <button onclick="printTable()">Multiplication Table</button>
+    <button onclick="findFactorial()">Factorial</button>
+    <button onclick="digitSum()">Digit Sum</button>
+
+    <div id="result"></div>
+
+    <script>
+        function getNumber() {
+            return parseInt(document.getElementById("number").value);
+        }
+
+        function checkOddEven() {
+            let num = getNumber();
+            let result = (num % 2 === 0) ? "Even Number" : "Odd Number";
+            document.getElementById("result").innerHTML = result;
+        }
+
+        function printTable() {
+            let num = getNumber();
+            let output = "";
+
+            for (let i = 1; i <= 10; i++) {
+                output += num + " x " + i + " = " + (num * i) + "<br>";
+            }
+
+            document.getElementById("result").innerHTML = output;
+        }
+
+        function findFactorial() {
+            let num = getNumber();
+            let fact = 1;
+
+            for (let i = 1; i <= num; i++) {
+                fact *= i;
+            }
+
+            document.getElementById("result").innerHTML =
+                "Factorial of " + num + " is " + fact;
+        }
+
+        function digitSum() {
+            let num = getNumber();
+            let sum = 0;
+
+            while (num > 0) {
+                sum += num % 10;
+                num = Math.floor(num / 10);
+            }
+
+            document.getElementById("result").innerHTML =
+                "Digit Sum is " + sum;
+        }
+    </script>
+
+</body>
+</html>
+
