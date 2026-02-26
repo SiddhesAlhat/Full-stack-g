@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+    let size = parseInt(prompt("Enter size: "));
+    let arr = [];
+
+    for ( let i = 0 ; i < size ; i++ )
+{
+    arr.push(parseInt(prompt("Enter element: ")));
+
+}
+arr.sort(( a, b) => a-b );
+
+console.log("Second minimum element is: " + arr[1]);
+console.log("SEecond maximum element is: " + arr[arr.length - 2]);
+
+</script>
+</body>
+</html>
